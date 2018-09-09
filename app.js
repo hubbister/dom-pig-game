@@ -36,29 +36,6 @@ function btn() {
 }*/
 
 
-function changeActive() {
-    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-    document.getElementById('current-0').textContent = 0;
-    document.getElementById('current-1').textContent = 0;
-//        document.getElementById('current-' + activePlayer).textContent = roundScore;
-    //document.querySelector('.player-' + activePlayer).classList.remove('active');
-    //document.querySelector('.player-1').classList.add('active');
-
-/*
-    if (activePlayer === 1) {
-        activePlayer = 0;
-        document.querySelector('.player-1-panel').classList.remove('active');
-        document.querySelector('.player-0-panel').classList.add('active');
-    }
-    else {
-        activePlayer = 1;*/
-        document.querySelector('.player-0-panel').classList.toggle('active');
-        document.querySelector('.player-1-panel').classList.toggle('active');
-
-        document.querySelector('.dice').style.display = 'none';
-        roundScore = 0;
-}
-
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
     
@@ -98,8 +75,33 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         if (scores[activePlayer] >= 100) {
             document.querySelector('#name-' + activePlayer).textContent = 'winner';
         } else {
-
+            //next player
             changeActive();
         }
         
 });
+
+
+
+function changeActive() {
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    document.getElementById('current-0').textContent = 0;
+    document.getElementById('current-1').textContent = 0;
+//        document.getElementById('current-' + activePlayer).textContent = roundScore;
+    //document.querySelector('.player-' + activePlayer).classList.remove('active');
+    //document.querySelector('.player-1').classList.add('active');
+
+/*
+    if (activePlayer === 1) {
+        activePlayer = 0;
+        document.querySelector('.player-1-panel').classList.remove('active');
+        document.querySelector('.player-0-panel').classList.add('active');
+    }
+    else {
+        activePlayer = 1;*/
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+
+        document.querySelector('.dice').style.display = 'none';
+        roundScore = 0;
+}
