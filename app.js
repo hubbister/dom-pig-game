@@ -35,7 +35,6 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         }*/
     // 3. update the round score if the rolled number is not a 1
         if (dice1 === 1 || dice === 1){
-            console.log(dice1, dice);
         //next player
             changeActive();
         }
@@ -61,7 +60,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 // Update the ui
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 // Check if player won the game
-        winScore = document.querySelector('#inputValue').value;
+        winScore = document.querySelector('.final-score').value;
         
         if (scores[activePlayer] >= winScore) {
             winner();
