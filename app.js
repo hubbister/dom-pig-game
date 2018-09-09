@@ -51,11 +51,11 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     if (dice !== 1 ){
         //add score
         roundScore += dice;
-        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
     } else {
         //next player
         roundScore = 0;
-        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        document.getElementById('current-' + activePlayer).textContent = roundScore;
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     }
 
